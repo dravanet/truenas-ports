@@ -1,7 +1,7 @@
 # Created by: David O'Brien (obrien@cs.ucdavis.edu)
 
 PORTNAME=	rsync
-DISTVERSION=	3.2.5
+DISTVERSION=	3.2.7
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
 		http://rsync.mirror.garr.it/src/ \
@@ -83,7 +83,9 @@ ZLIB_BASE_CONFIGURE_ON=	--with-included-zlib=no
 
 ACL_EXTRA_PATCHES+=	${PATCHDIR}/fix-nfs4_acls.patch
 
-.if make(makesum)
+.include <bsd.port.options.mk>
+
+.if make(makesum) || ${PORT_OPTIONS:MRENAMED} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MRENAMED}
 DISTFILES+=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 .endif
 
