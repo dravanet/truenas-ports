@@ -1,5 +1,5 @@
 PORTNAME=	openzfs
-PORTVERSION=	2024081500
+PORTVERSION=	2024082300
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -24,9 +24,9 @@ TESTS_DESC=	Install the ZFS Test Suite
 OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	truenas
-GH_PROJECT=	zfs
-GH_TAGNAME=	6704ddadc
+GH_ACCOUNT=	dravanet
+GH_PROJECT=	openzfs-zfs
+GH_TAGNAME=	00e92f8d3
 
 .include <bsd.port.pre.mk>
 
